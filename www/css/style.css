@@ -1,0 +1,56 @@
+/* Empty. Add your own CSS if you like */
+subtitle{
+    font-size:20px;
+  }
+
+  subtitlesmall{
+    font-size:15px;
+  }
+
+.background-overview{
+	background-color: grey;
+}
+
+.loader{
+	background: #1A9CC7 !important;
+	border-radius:100px;
+	
+}
+
+.loaderred{
+	background: red !important;
+	border-radius:100px;
+	
+}
+
+.loadergreen{
+	background: green !important;
+	border-radius:100px;
+	
+}
+
+.progressbartext{
+		text-align:center;
+		color:white !important;
+	}
+
+h1{
+	text-align: center;
+}
+
+.itemwithmargin
+{
+     margin-bottom: 5px !important;
+}
+
+.cardwithmargin{
+	background-color: grey;
+}
+
+.semaphor {
+  font-size: 30px;
+}
+
+.overviewitembig{
+	background-color: #EBFCE6;
+}

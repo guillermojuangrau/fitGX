@@ -1,0 +1,15 @@
+<ion-view view-title="Intake input">
+ <ion-content>
+ <ion-list show-delete="shouldShowDelete"> 
+  <ion-item ng-repeat="intake in actualdata.intake">
+    <subtitle>{{intake.name}}</subtitle>
+    <p>{{intake.calories}}</p>
+        <ion-delete-button class="ion-minus-circled" ng-click="deleteIntakeItem(intake)"></ion-delete-button>
+    </ion-item>	
+</ion-list>
+<ion-toggle ng-model="shouldShowDelete">
+  Show Delete?
+</ion-toggle>
+<button class="button button-full button-balanced" ng-click="addIntakeItem()">Add</button>
+</ion-content>
+</ion-view>

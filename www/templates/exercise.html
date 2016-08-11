@@ -1,0 +1,16 @@
+<ion-view view-title="Exercise input">
+ <ion-content>
+ <ion-list show-delete="shouldShowDelete"> 
+  <ion-item ng-repeat="exercise in actualdata.exercise">
+    <subtitle>{{exercise.exercise}}
+    <p>{{exercise.quantity}}</p>
+    <p>{{exercise.time}}</p>
+  <ion-delete-button class="ion-minus-circled" ng-click="deleteExerciseItem(exercise)"></ion-delete-button>
+    </ion-item>	
+</ion-list>
+<ion-toggle ng-model="shouldShowDelete">
+  Show Delete?
+</ion-toggle>
+<button class="button button-full button-balanced" ng-click="addExerciseItem()">Add</button>
+</ion-content>
+</ion-view>

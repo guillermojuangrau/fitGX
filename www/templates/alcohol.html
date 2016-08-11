@@ -1,0 +1,26 @@
+<ion-view view-title="Alcohol">
+ <ion-content>
+
+ <div class="list">
+
+  <label class="item item-input item-select">
+    <div class="input-label">
+      Alcohol beverage
+    </div>
+    <select ng-model="beverage">
+      <option>Beer</option>
+      <option selected>Wine</option>
+      <option>Gin Tonic</option>
+      <option>Rum</option>
+      <option>Whiskey</option>
+      <option>Vodka</option>
+    </select>
+  </label>
+
+</div>
+
+
+
+<button class="button button-full button-balanced"  ng-click="insertAlcohol(beverage)">Add</button>
+</ion-content>
+</ion-view>

@@ -1,0 +1,87 @@
+<ion-view view-title="Overview for day: {{FromDate}}" class="background-overview">
+  <ion-content class="padding">
+  <div class="card cardwithmargin">
+      <div class="item item-text-wrap overviewitembig itemwithmargin">
+      <h1>Caloric Intake</h1>
+        <div class="loadergreen" ng-show="progressPercent<1" style="width: 100%;">
+          <p class="progressbartext">No caloric data for today</p>
+          
+        </div>
+        <div class="loader" ng-show="progressPercent<101" style="width: {{progressPercent}}%;">
+          <p class="progressbartext">{{progressPercent}}%</p>
+          
+        </div>
+        <div class="loaderred" ng-show="progressPercent>100" style="width: 100%;">
+          <p class="progressbartext">Exceeded</p>
+        </div>
+        <p>Caloric limit: {{actualsettings.intakelimit}}</p>
+        <p>Daily intake: {{actualdata.totalintake}}</p>
+        <p>Progress percent: {{progressPercent}}%</p>
+        <p>Day color: {{actualdata.color}}</p>
+        
+      </div>
+   <div class="item item-text-wrap itemwithmargin overviewitembig">
+      <h1>Day checks</h1>
+      <div class="row">
+      <!-- LOS COLORES DEL SEMAFORO SE ACTUALIZAN CON NG-SHOW, SOLO ESTA HECHO EL DEL TABACO PERO HAY QUE HACER LOS DEMAS -->
+  <div class="col" ng-show="progressPercent<101"><button  class="button ion-ios-nutrition button-balanced semaphor"></button></div>
+  <div class="col" ng-show="progressPercent>100"><button   class="button ion-ios-nutrition button-assertive semaphor"></button></div>
+  <div class="col" ng-show="actualdata.exercise.length==0"><button  class="button  ion-ios-body button-assertive semaphor"></button></div>
+  <div class="col" ng-show="actualdata.exercise.length!=0"><button  class="button  ion-ios-body button-balanced semaphor"></button></div>
+  <div class="col" ng-show="actualdata.alcohol<actualsettings.alcohollimit"><button class="button  ion-wineglass button-balanced semaphor"></button></div>
+  <div class="col" ng-show="actualdata.alcohol>actualsettings.alcohollimit"><button class="button  ion-wineglass button-assertive semaphor"></button></div>
+  <div class="col" ng-show="actualdata.tobacco<actualsettings.tobaccolimit"><button  class="button  ion-no-smoking button-balanced semaphor"></button></div>
+  <div class="col" ng-show="actualdata.tobacco>actualsettings.tobaccolimit"><button  class="button  ion-no-smoking button-assertive semaphor"></button></div>
+  </div>
+   </div>
+   <div class="item item-text-wrap itemwithmargin overviewitembig">
+   <h1>Summary</h1>
+    <div class="card">
+    <div class="item item-text-wrap item-icon-left">
+    <i class="icon ion-ios-nutrition"></i>
+    <subtitle>Caloric intake</subtitle>
+    <list>
+       <ul ng-repeat="intake in actualdata.intake" type="item-text-wrap" >
+          <p>{{intake.name + " - " + intake.calories}}</p>
+          </ul>
+    </list>
+    </div>
+    <div class="item item-text-wrap item-icon-left">
+    <i class="icon ion-ios-body"></i>
+    <subtitle>Exercise</subtitle>
+    <list>
+       <ul ng-repeat="exercise in actualdata.exercise" type="item-text-wrap" >
+          <p>{{exercise.exercise + " - " + exercise.quantity + "  " + exercise.time}}</p>
+          </ul>
+    </list>
+    </div>
+    <div class="item item-text-wrap  item-icon-left">
+    <i class="icon ion-wineglass"></i>
+    <subtitle>Alcohol</subtitle>
+    <p>{{ actualdata.alcohol + " units" }}</p>
+    </div>
+</div>
+<div class="row">
+  <div class="col">
+    <div class="card">
+    <div class="item item-text-wrap  item-icon-left">
+    <i class="icon ion-ios-speedometer"></i>
+    <subtitlesmall>Weight</subtitlesmall>
+    <p>{{ actualdata.weight }}</p>
+    </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+    <div class="item item-text-wrap  item-icon-left">
+    <i class="icon ion-no-smoking"></i>
+    <subtitlesmall>Tobacco</subtitlesmall>
+    <p>{{ actualdata.tobacco }}</p>
+    </div>
+    </div>
+  </div>
+</div>
+   </div>
+</div>
+  </ion-content>
+</ion-view>

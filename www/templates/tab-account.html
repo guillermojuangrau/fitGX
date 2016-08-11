@@ -1,0 +1,50 @@
+<ion-view view-title="Settings">
+  <ion-content>
+   <div class="list">
+
+  <a class="item item-icon-left" ng-click="showPopupDesiredWeight()">
+    <i class="icon ion-ios-speedometer"></i>
+    Desired weight
+    <span class="badge badge-balanced">{{ actualsettings.desiredweight }}</span>
+  </a>
+
+  <a class="item item-icon-left"  ng-click="showPopupCaloricLimit()">
+    <i class="icon ion-ios-nutrition"></i>
+    Caloric limit
+    <span class="badge badge-balanced">{{ actualsettings.intakelimit }}</span>
+  </a>
+
+
+  <a class="item item-icon-left"  ng-click="showPopupAlcoholLimit()">
+    <i class="icon ion-wineglass"></i>
+    Alcohol limit
+    <span class="badge badge-balanced">{{ actualsettings.alcohollimit}}</span>
+  </a>
+
+  <a class="item item-icon-left" ng-click="showPopupTobaccoLimit()">
+    <i class="icon ion-no-smoking"></i>
+    Tobacco limit
+    <span class="badge badge-balanced">{{ actualsettings.tobaccolimit }}</span>
+  </a>
+
+</div>
+  <!--
+     <div class="card"  style="background-color:yellow">
+<p>This page is currently under construction. Please call <a href="http://guillermodejuan.com">Guillermo de Juan Grau</a> for more info.</p>
+<a class="item item-icon-left item-icon-right" href="tel:+34618107628">
+    <i class="icon ion-telephone"></i>
+    Guillermo de Juan Grau
+    <i class="icon ion-ios-telephone-outline"></i>
+  </a>
+  </div>
+    
+
+    -->
+<button class="button button-full button-balanced"  ng-click="saveData()">Save data</button>
+<button class="button button-full button-assertive"  ng-show="shouldShowEraseDelete" ng-click="eraseData()">Erase data (development button)</button>
+<ion-toggle ng-model="shouldShowEraseDelete">
+  Delete data?
+</ion-toggle>
+
+  </ion-content>
+</ion-view>
